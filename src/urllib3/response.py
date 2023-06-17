@@ -297,7 +297,7 @@ class BaseHTTPResponse(io.IOBase):
     def __init__(
         self,
         *,
-        headers: typing.Mapping[str, str] | typing.Mapping[bytes, bytes] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         status: int,
         version: int,
         reason: str | None,
@@ -537,7 +537,7 @@ class HTTPResponse(BaseHTTPResponse):
     def __init__(
         self,
         body: _TYPE_BODY = "",
-        headers: typing.Mapping[str, str] | typing.Mapping[bytes, bytes] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         status: int = 0,
         version: int = 0,
         reason: str | None = None,

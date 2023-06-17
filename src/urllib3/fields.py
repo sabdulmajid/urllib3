@@ -173,7 +173,7 @@ class RequestField:
         name: str,
         data: _TYPE_FIELD_VALUE,
         filename: str | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         header_formatter: typing.Callable[[str, _TYPE_FIELD_VALUE], str] | None = None,
     ):
         self._name = name

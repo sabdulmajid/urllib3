@@ -135,7 +135,7 @@ def request(
     *,
     body: _TYPE_BODY | None = None,
     fields: _TYPE_FIELDS | None = None,
-    headers: typing.Mapping[str, str] | None = None,
+    headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
     preload_content: bool | None = True,
     decode_content: bool | None = True,
     redirect: bool | None = True,

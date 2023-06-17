@@ -199,7 +199,7 @@ class PoolManager(RequestMethods):
     def __init__(
         self,
         num_pools: int = 10,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         **connection_pool_kw: typing.Any,
     ) -> None:
         super().__init__(headers)
@@ -545,8 +545,8 @@ class ProxyManager(PoolManager):
         self,
         proxy_url: str,
         num_pools: int = 10,
-        headers: typing.Mapping[str, str] | None = None,
-        proxy_headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
+        proxy_headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         proxy_ssl_context: ssl.SSLContext | None = None,
         use_forwarding_for_https: bool = False,
         proxy_assert_hostname: None | str | Literal[False] = None,

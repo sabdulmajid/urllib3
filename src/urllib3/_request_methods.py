@@ -56,7 +56,7 @@ class RequestMethods:
         method: str,
         url: str,
         body: _TYPE_BODY | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         encode_multipart: bool = True,
         multipart_boundary: str | None = None,
         **kw: typing.Any,
@@ -72,7 +72,7 @@ class RequestMethods:
         url: str,
         body: _TYPE_BODY | None = None,
         fields: _TYPE_FIELDS | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         json: typing.Any | None = None,
         **urlopen_kw: typing.Any,
     ) -> BaseHTTPResponse:
@@ -124,7 +124,7 @@ class RequestMethods:
         method: str,
         url: str,
         fields: _TYPE_ENCODE_URL_FIELDS | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         **urlopen_kw: str,
     ) -> BaseHTTPResponse:
         """
@@ -147,7 +147,7 @@ class RequestMethods:
         method: str,
         url: str,
         fields: _TYPE_FIELDS | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         encode_multipart: bool = True,
         multipart_boundary: str | None = None,
         **urlopen_kw: str,

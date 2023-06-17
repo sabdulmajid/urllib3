@@ -222,7 +222,7 @@ class HTTPConnection(_HTTPConnection):
         self,
         host: str,
         port: int | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         scheme: str = "http",
     ) -> None:
         if scheme not in ("http", "https"):
@@ -314,7 +314,7 @@ class HTTPConnection(_HTTPConnection):
         method: str,
         url: str,
         body: _TYPE_BODY | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
         *,
         chunked: bool = False,
         preload_content: bool = True,
@@ -411,7 +411,7 @@ class HTTPConnection(_HTTPConnection):
         method: str,
         url: str,
         body: _TYPE_BODY | None = None,
-        headers: typing.Mapping[str, str] | None = None,
+        headers: typing.Mapping[typing.Union[str, bytes], typing.Union[str, bytes]] | None = None,
     ) -> None:
         """
         Alternative to the common request method, which sends the
